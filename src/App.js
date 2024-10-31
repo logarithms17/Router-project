@@ -5,24 +5,15 @@ import RootLayout from "./pages/RootLayout";
 import ErrorPage from "./pages/ErrorPage";
 import ProductDetailPage from "./pages/ProductDetailPage";
 
-// const routeDefinitions = createRoutesFromElements(
-//   <Route>
-//     <Route path="/" element={<Home />} />
-//     <Route path="/products" element={<Products />} />
-//   </Route>
-// )
-
-// const router = createBrowserRouter(routeDefinitions)
-
 const router = createBrowserRouter([
   {
     path: '/',
     element: <RootLayout />,
     errorElement: <ErrorPage />,
     children: [
-      { path: '/', element: <Home /> },
-      { path: '/products', element: <Products /> },
-      { path: '/products/:id', element: <ProductDetailPage /> },
+      { index: true, element: <Home /> },
+      { path: 'products', element: <Products /> },
+      { path: 'products/:productId', element: <ProductDetailPage /> },
   ]},
   
 ])
